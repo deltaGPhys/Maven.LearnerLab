@@ -1,6 +1,8 @@
 package io.zipcoder.interfaces;
 
-public final class Instructors extends People {
+import java.util.ArrayList;
+
+public final class Instructors extends People<Instructor> {
 
     private static final Instructors INSTANCE = new Instructors();
 
@@ -14,5 +16,14 @@ public final class Instructors extends People {
 
     public static Instructors getInstance() {
         return INSTANCE;
+    }
+
+    public Instructor[] toArray() {
+        Instructor[] result = new Instructor[INSTANCE.count()];
+        int i = 0;
+        for (Instructor instructor: INSTANCE) {
+            result[i++] = instructor;
+        }
+        return result;
     }
 }

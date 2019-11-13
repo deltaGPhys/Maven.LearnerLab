@@ -15,19 +15,18 @@ public class ZipCodeWilmington {
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
 
-        Learner[] learners = Arrays.copyOf(students.toArray(), students.toArray().length, Learner[].class);
-        teacher.lecture(learners, numberOfHours);
+        teacher.lecture(students.toArray(), numberOfHours);
     }
 
     public void hostLecture(long id, double numberOfHours) {
-        Teacher teacher = (Teacher) instructors.findById(id);
+        Teacher teacher = instructors.findById(id);
         hostLecture(teacher, numberOfHours);
     }
 
     public HashMap<Student,Double> getStudyMap() {
         HashMap<Student, Double> map = new HashMap<>();
-        for (Person student : students.toArray()) {
-            map.put((Student) student,((Student) student).getTotalStudyTime());
+        for (Student student : students.toArray()) {
+            map.put(student, student.getTotalStudyTime());
         }
         return map;
     }
