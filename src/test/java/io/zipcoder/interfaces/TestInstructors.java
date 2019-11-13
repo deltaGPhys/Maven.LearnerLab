@@ -7,7 +7,6 @@ public class TestInstructors {
 
     @Test
     public void test() {
-
         Assert.assertEquals("Kris", Instructors.getInstance().findById(1).getName());
         Assert.assertEquals("Chris", Instructors.getInstance().findById(9).getName());
         Assert.assertEquals("Froilan", Instructors.getInstance().findById(10).getName());

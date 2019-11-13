@@ -7,8 +7,9 @@ public class ZipCodeWilmington {
 
     private Students students;
     private Instructors instructors;
+    private Educator educator;
 
-    public ZipCodeWilmington() {
+    public ZipCodeWilmington()  {
         this.students = Students.getInstance();
         this.instructors = Instructors.getInstance();
     }
